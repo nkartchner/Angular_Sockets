@@ -1,0 +1,14 @@
+<div
+  class="row m-2 border border-blue rounded-sm overflow-auto"
+  style="height: 500px;"
+>
+  <div class="col">
+    <div *ngFor="let message of messages; let i = index" class="row pl-3 pt-1">
+      <p class="border border-red rounded-sm p-1">
+        <span style="color: blue;">{{ message.name }}</span
+        >:
+        {{ message.message }}
+      </p>
+    </div>
+  </div>
+</div>

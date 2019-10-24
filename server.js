@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'sockets/dist/sockets')));
+app.use(express.static(path.join(__dirname, 'public/dist/public')));
 
 app.all('*', (req, res) =>
-	res.sendFile(path.resolve(__dirname, 'sockets/dist/sockets/index.html'))
+	res.sendFile(path.resolve(__dirname, 'public/dist/public/index.html'))
 );
 
-const server = app.listen(8000, () => console.log('Im all fired up!'));
+const server = app.listen(6789, () => console.log('Im all fired up!'));
 const io = require('socket.io').listen(server);
 
 const messages = [];
